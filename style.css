@@ -942,7 +942,7 @@ table img:hover {
     font-size: 1rem;
     font-weight: 300;
     height: 2rem;
-    width: 10rem;
+    width: auto;
   }
  
   /* home page bottom title opt */
