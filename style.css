@@ -758,6 +758,11 @@ table img:hover {
 
 /* media queries for item */
 @media only screen and (max-width: 768px) {
+
+    .section__header{
+  margin-left: 0.4rem;
+  }
+  
   .thumbnail .item {
     display: none; /* Hide the item on smaller screens */
   }
