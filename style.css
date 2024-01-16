@@ -19,6 +19,7 @@ body {
   background-color: #fffefe;
   font-family: Poppins;
   font-size: 12px;
+  overflow-x: hidden;
 }
 
 /* NAVBAR CSS*/
