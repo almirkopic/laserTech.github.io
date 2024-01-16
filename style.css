@@ -758,12 +758,6 @@ table img:hover {
 
 /* media queries for item */
 @media only screen and (max-width: 768px) {
-
-    .section__header{
-  margin-left: 0.4rem;
-      display:flex;
-  }
-  
   .thumbnail .item {
     display: none; /* Hide the item on smaller screens */
   }
@@ -857,7 +851,26 @@ table img:hover {
 
 /* Media Query for Even Smaller Screens */
 @media screen and (max-width: 590px) {
-  /*////////
+  /*////////*/
+
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    overflow-x: hidden;
+  }
+
+   .section__header{
+  margin-left: 0.3rem;
+      display:flex;
+  }
 
   /* HOME PAGE */
   .thumbnail .item {
