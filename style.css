@@ -481,7 +481,6 @@ img {
 
 .features__feature {
   width: 100%;
-  margin-bottom: 2rem;
 }
 /* table com */
 table {
@@ -605,6 +604,28 @@ table img:hover {
 .social-links a {
   width: 50px;
   height: 45px;
+}
+
+/*********** Service Guide*/
+
+.service_guide {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  margin: auto;
+}
+.service_guide img {
+  height: 4rem;
+  width: 4rem;
+}
+.service_support {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.service_title {
+  font-size: 1.5rem;
 }
 
 /***************************/
@@ -759,6 +780,13 @@ table img:hover {
   .slider-container {
     height: auto;
     margin-bottom: 2rem;
+  }
+
+  /**********/
+  .service_guide {
+    flex-direction: column;
+    gap: 2rem;
+    margin: auto;
   }
 }
 
@@ -942,7 +970,7 @@ table img:hover {
   .bottom-title {
     width: 95%;
     height: 1.3rem;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #3e3f3f;
     padding: 0;
     margin: 0;
@@ -991,7 +1019,9 @@ table img:hover {
     display: flex;
     flex-direction: column;
   }
-
+  .sec_title {
+    padding: 1rem;
+  }
   .custom-banner {
     width: 100%;
     padding: 0;
