@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 :root {
-  --color-primary: #5ec576;
+  --color-primary: #11eebe;
   --color-secondary: #ffcb03;
   --color-tertiary: #ff585f;
   --color-primary-darker: #fc7527;
@@ -389,7 +389,85 @@ header {
   color: #afaeae;
 }
 
-/* mobile banner */
+/* section banner */
+
+.section_banner {
+  width: 70%;
+  justify-content: center;
+  margin: auto;
+  position: relative;
+}
+.main_product_container {
+  gap: 0.4rem;
+}
+
+.main_product_container,
+.product_delta,
+.product_container_secondary {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* If you want to center vertically as well */
+}
+.section_banner img {
+  border-radius: 15px;
+}
+.product_delta a:hover img,
+.main_product_container a:hover img,
+.product_container_secondary a:hover img {
+  transform: scale(1.006);
+  transition: transform 0.1s ease;
+}
+.product_content {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  margin-bottom: 15rem;
+  width: 37.5rem;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.product_container_secondary {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 37.5rem;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  margin-top: 3rem;
+}
+.section_banner .product_content h2,
+.section_banner .product_content p,
+.section_banner .product_content button,
+.section_banner .product_container_secondary h2,
+.section_banner .product_container_secondary p,
+.section_banner .product_container_secondary button {
+  padding: 0;
+  margin: 0.2rem 0;
+}
+.section_banner button,
+.product_container_secondary button {
+  width: 130px; /* Fixed width for the button */
+  height: 35px; /* Fixed height for the button */
+  font-size: 14px; /* Font size */
+  border: none;
+  background: linear-gradient(to right, #1da0f8, #59bdffc0);
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: "Arial", sans-serif;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.section_banner .product_content h2,
+.section_banner .product_container_secondary h2 {
+  font-size: 1.6rem;
+}
+.section_banner .product_content p,
+.section_banner .product_container_secondary p {
+  font-weight: 350;
+}
 
 /*///////////////*/
 
@@ -422,8 +500,8 @@ link .features__feature {
 }
 
 .svg_logo {
-  height: 13rem;
-  width: 13rem;
+  height: 6rem;
+  width: 6rem;
 }
 
 .features__header {
@@ -481,6 +559,7 @@ img {
 
 .features__feature {
   width: 100%;
+  margin-top: 4rem;
 }
 /* table com */
 table {
@@ -713,8 +792,7 @@ table img:hover {
     padding: 0;
   }
   .navbar {
-    margin-left: 2px;
-    margin-right: 2px;
+    padding: 0rem 0.3rem;
     height: auto;
     display: flex;
     justify-content: space-between;
@@ -788,6 +866,11 @@ table img:hover {
     gap: 2rem;
     margin: auto;
   }
+
+  .main_product_container,
+  .product_container_secondary {
+    flex-direction: column;
+  }
 }
 
 /* Responsive adjustment for smaller screens */
@@ -818,11 +901,6 @@ table img:hover {
 
   .grow_order2 {
     order: 2;
-  }
-
-  .grow_order2,
-  .grow_order3 {
-    order: 3;
   }
 
   /* Main Slider Queries */
@@ -886,19 +964,11 @@ table img:hover {
     height: 100%;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
   }
 
   * {
     box-sizing: border-box;
-  }
-
-  body {
-    overflow-x: hidden;
-  }
-
-  .section__header {
-    margin-left: 0.4rem;
-    display: flex;
   }
 
   /* HOME PAGE */
@@ -942,7 +1012,7 @@ table img:hover {
   }
 
   .section__header {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
   /***************/
 
@@ -995,7 +1065,6 @@ table img:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-bottom: -10%;
   }
 
   .features__feature p {
@@ -1014,7 +1083,7 @@ table img:hover {
   /* custom middle banner*/ /* section2 */
   #section--2 {
     width: 100%;
-    margin: 0rem;
+    margin: auto;
     padding: 0;
     display: flex;
     flex-direction: column;
