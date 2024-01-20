@@ -411,12 +411,7 @@ header {
 .section_banner img {
   border-radius: 15px;
 }
-/* .product_delta a:hover img,
-.main_product_container a:hover img,
-.product_container_secondary a:hover img {
-  transform: scale(1.006);
-  transition: transform 0.1s ease;
-} */
+
 .product_content {
   display: flex;
   flex-direction: column;
