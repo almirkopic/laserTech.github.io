@@ -23,6 +23,7 @@ let runTimeOut;
 let runNextAuto = setTimeout(() => {
   next.click();
 }, timeAutoNext);
+
 function showSlider(type) {
   let SliderItemsDom = SliderDom.querySelectorAll(".carousel .list .item");
   let thumbnailItemsDom = document.querySelectorAll(
@@ -64,7 +65,7 @@ const revealSection = function (entries, observer) {
 
 const sectionObserver = new IntersectionObserver(revealSection, {
   root: null,
-  threshold: 0.15 /* title load speed*/,
+  threshold: 0.15,
 });
 
 allSections.forEach(function (section) {
@@ -111,7 +112,17 @@ document.querySelector(".nav__links").addEventListener("click", function (e) {
   // Matching strategy
   if (e.target.classList.contains("nav__link")) {
     const id = e.target.getAttribute("href");
-    document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+    const targetSection = document.querySelector(id);
+
+    if (targetSection) {
+      const navHeight = document.querySelector(".nav").offsetHeight;
+      const targetPosition = targetSection.offsetTop - navHeight + 1;
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth",
+      });
+    }
   }
 });
 
@@ -139,7 +150,21 @@ const header = document.querySelector(".carousel");
 const navElement = document.querySelector(".nav");
 const navHeight = navElement.getBoundingClientRect().height;
 
-let prevScrollPos = window.pageYOffset;
+// Store scroll position before page refresh
+window.addEventListener("beforeunload", function () {
+  sessionStorage.setItem("scrollPosition", window.scrollY);
+});
+
+// Restore scroll position after page refresh
+document.addEventListener("DOMContentLoaded", function () {
+  const storedScrollPosition = sessionStorage.getItem("scrollPosition");
+
+  if (storedScrollPosition) {
+    window.scrollTo(0, parseInt(storedScrollPosition));
+  }
+});
+
+let prevScrollPos = parseInt(sessionStorage.getItem("scrollPosition")) || 0;
 let isNavHidden = false;
 
 const stickyNav = function (entries) {
