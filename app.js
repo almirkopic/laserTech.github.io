@@ -1,4 +1,4 @@
-//slider
+// Slider
 let nextDom = document.getElementById("next");
 let prevDom = document.getElementById("prev");
 
@@ -50,8 +50,7 @@ function showSlider(type) {
   }, timeAutoNext);
 }
 
-///////////////////////////////////////
-//  sections title animations
+// Sections title animations
 const allSections = document.querySelectorAll(".section");
 
 const revealSection = function (entries, observer) {
@@ -73,33 +72,7 @@ allSections.forEach(function (section) {
   section.classList.add("section--hidden");
 });
 
-// Lazy loading imgs
-const imgTargets = document.querySelectorAll("img[data-src]");
-
-const loadImg = function (entries, observer) {
-  const [entry] = entries;
-
-  if (!entry.isIntersecting) return;
-
-  // Replace src with data-src
-  entry.target.src = entry.target.dataset.src;
-
-  entry.target.addEventListener("load", function () {
-    entry.target.classList.remove("lazy-img");
-  });
-
-  observer.unobserve(entry.target);
-};
-
-const imgObserver = new IntersectionObserver(loadImg, {
-  root: null,
-  threshold: 0,
-  rootMargin: "150px",
-});
-
-imgTargets.forEach((img) => imgObserver.observe(img));
-
-//banner slider
+// Banner slider
 document.addEventListener("DOMContentLoaded", function () {
   const slider = document.querySelector(".slider");
   let currentIndex = 0;
@@ -116,18 +89,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   setInterval(nextSlide, 2000); // need bug fix
 });
-////////////NAV/////
 
-// document.querySelector(".nav__links").addEventListener("click", function (e) {
-//   e.preventDefault();
-
-//   if (e.target.classList.contains("nav__link")) {
-//     const id = e.target.getAttribute("href");
-//     document.querySelector(id).scrollIntoView({ behavior: "smooth" });
-//   }
-// });
-/* Toggle nav*/
-
+// Toggle nav
 const toggleBtn = document.querySelector(".toggle_btn");
 const dropDownMenu = document.querySelector(".dropdown_menu");
 
@@ -141,6 +104,78 @@ window.addEventListener("resize", function () {
   dropDownMenu.classList.remove("open");
 });
 
-///////////////
+// Smooth scrolling NAV
+document.querySelector(".nav__links").addEventListener("click", function (e) {
+  e.preventDefault();
 
+  // Matching strategy
+  if (e.target.classList.contains("nav__link")) {
+    const id = e.target.getAttribute("href");
+    document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+  }
+});
 
+// Menu fade animation
+const navbar = document.querySelector(".navbar");
+
+const handleHover = function (e) {
+  if (e.target.classList.contains("nav__link")) {
+    const link = e.target;
+    const siblings = link.closest(".nav").querySelectorAll(".nav__link");
+    const logo = link.closest(".nav").querySelector("img");
+
+    siblings.forEach((el) => {
+      if (el !== link) el.style.opacity = this;
+    });
+    logo.style.opacity = this;
+  }
+};
+
+navbar.addEventListener("mouseover", handleHover.bind(0.5));
+navbar.addEventListener("mouseout", handleHover.bind(1));
+
+// Sticky nav
+const header = document.querySelector(".carousel");
+const navElement = document.querySelector(".nav");
+const navHeight = navElement.getBoundingClientRect().height;
+
+let prevScrollPos = window.pageYOffset;
+let isNavHidden = false;
+
+const stickyNav = function (entries) {
+  const [entry] = entries;
+  const currentScrollPos = window.pageYOffset;
+
+  if (prevScrollPos < currentScrollPos) {
+    // Scrolling down
+    if (currentScrollPos > window.innerHeight && !isNavHidden) {
+      navElement.style.transform = "translateY(-100%)";
+      isNavHidden = true;
+    }
+  } else {
+    // Scrolling up
+    navElement.style.transform = "none";
+    isNavHidden = false;
+  }
+
+  if (currentScrollPos > (100 * window.innerHeight) / 100) {
+    navElement.style.transform = "translateY(-100%)";
+    isNavHidden = true;
+  }
+
+  prevScrollPos = currentScrollPos;
+
+  if (!entry.isIntersecting) {
+    navElement.classList.add("sticky");
+  } else {
+    navElement.classList.remove("sticky");
+  }
+};
+
+const headerObserver = new IntersectionObserver(stickyNav, {
+  root: null,
+  threshold: 0,
+  rootMargin: `-${navHeight}px`,
+});
+
+headerObserver.observe(header);
