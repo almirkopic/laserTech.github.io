@@ -143,9 +143,4 @@ window.addEventListener("resize", function () {
 
 ///////////////
 
-// slider
 
-/*when refresh pag,ewebsite loading again to the top */
-window.onbeforeunload = function () {
-  window.scrollTo(0, 0);
-};
