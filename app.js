@@ -204,3 +204,25 @@ const headerObserver = new IntersectionObserver(stickyNav, {
 });
 
 headerObserver.observe(header);
+
+/////////refresh
+
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+};
+
+//smooth scrol lto section one
+
+function scrollToSection(sectionId) {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    // Calculate the target scroll position, considering the title height
+    const titleHeight = document.querySelector(".section__header").offsetHeight;
+    const targetPosition = section.offsetTop - titleHeight;
+
+    window.scrollTo({
+      top: targetPosition,
+      behavior: "smooth",
+    });
+  }
+}
