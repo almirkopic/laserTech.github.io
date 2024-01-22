@@ -1055,6 +1055,9 @@ table img:hover {
   }
   /* SECTION2 */
   /* section 1 opt*/
+  #section--1 h2 {
+    font-size: 1.2rem;
+  }
   #section--1 {
     width: 100%;
     padding: 5px;
@@ -1087,6 +1090,9 @@ table img:hover {
     /*need to work on */
     height: 5rem;
   }
+  .product_content h2 {
+    font-size: 0.6rem;
+  }
   /* custom middle banner*/ /* section2 */
   #section--2 {
     width: 100%;
@@ -1095,7 +1101,10 @@ table img:hover {
     display: flex;
     flex-direction: column;
   }
-  .sec_title {
+  .custom-style {
+    padding: 15px !important;
+  }
+  .section_title {
     padding: 1rem;
   }
   .custom-banner {
