@@ -484,11 +484,11 @@ header {
   margin: 0 12rem;
 }
 
-.features__img {
+.features video {
   width: 100%;
   height: auto;
 }
-link .features__feature {
+.features__feature {
   align-self: center;
   justify-self: center;
   width: 70%;
@@ -523,7 +523,7 @@ link .features__feature {
 
 .section--hidden {
   opacity: 0;
-  transform: translateY(8rem);
+  transform: translateY(8rem); /* work for mobile phones*/
 }
 
 .section__title {
@@ -591,6 +591,14 @@ td {
   margin: 0 auto;
   overflow: hidden;
 }
+#section--2 {
+  width: 100% !important;
+  margin: auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
 .dark_column {
   background-color: #dedede;
 }
@@ -1066,10 +1074,10 @@ table img:hover {
     justify-content: center;
   }
   .features {
-    width: 95%;
+    width: 100%;
     padding-left: 0px;
-    margin: 0px; /*//////////////////* need to work on */
-    margin-top: -30%;
+    margin: 0px;
+    /* margin-top: -30%; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1080,7 +1088,13 @@ table img:hover {
   .features__feature p {
     font-size: 0.7rem;
     font-weight: 300;
+    margin: 0 1rem;
   }
+  .features__feature {
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+
   .features__header {
     font-size: 1rem;
     display: flex;
@@ -1094,8 +1108,8 @@ table img:hover {
     font-size: 0.6rem;
   }
   /* custom middle banner*/ /* section2 */
-  #section--2 {
-    width: 100%;
+  #section--3 {
+    width: 100% !important;
     margin: auto;
     padding: 0;
     display: flex;
@@ -1143,5 +1157,10 @@ table img:hover {
     border: 0;
     padding: 0;
     margin-top: 1.5rem;
+  }
+
+  .features video {
+    width: 100%; /* Make the video fill the container width */
+    height: auto; /* Maintain the aspect ratio */
   }
 }
