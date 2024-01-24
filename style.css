@@ -477,42 +477,37 @@ header {
 
 /*////////////////
 /* FEATURES */
-.features {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  margin: 0 12rem;
-}
 
-.features video {
+.features {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
+  gap: 5rem;
+}
+.features_div {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  max-width: 40rem;
+}
+.svg_logo {
+  justify-content: flex-start;
+  width: 6rem;
   height: auto;
 }
-.features__feature {
-  align-self: center;
-  justify-self: center;
-  width: 70%;
-}
-
-.features__icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 1rem;
-  width: 3rem;
-  margin-bottom: 1rem;
-}
-
-.svg_logo {
-  height: 6rem;
-  width: 6rem;
-}
-
 .features__header {
   font-size: 1.5rem;
-  font-weight: 600;
+  margin: 0;
 }
-
+.features_div p {
+  font-size: 1rem;
+  font-weight: 200;
+}
+/* .features_video video {
+  width: 100%;
+  height: auto;
+} */
 /* GENERAL ELEMENTS */
 
 .section {
@@ -565,7 +560,16 @@ img {
   width: 100%;
   margin-top: 4rem;
 }
+
 /* table com */
+#section--3 img {
+  width: 100%;
+  height: auto;
+  max-width: none;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
 table {
   margin-top: 20px;
   border-collapse: collapse;
@@ -582,21 +586,6 @@ td {
   text-align: center;
   font-size: 1rem;
   height: auto;
-}
-
-#section--3 img {
-  width: 100%;
-  height: auto;
-  max-width: none;
-  margin: 0 auto;
-  overflow: hidden;
-}
-#section--2 {
-  width: 100% !important;
-  margin: auto;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
 }
 
 .dark_column {
@@ -719,7 +708,7 @@ table img:hover {
   font-size: 1.5rem;
 }
 
-/***************************/
+/**************SIGN UP & Footer*************/
 .section--sign-up {
   background-color: #928f8f;
   text-align: center;
@@ -1050,7 +1039,16 @@ table img:hover {
     height: 3rem;
     width: auto;
   }
-
+  #section--2 {
+    width: 100%;
+    margin: 0;
+  }
+  .grow-order-2 {
+    order: 1;
+  }
+  .grow-order-1 {
+    order: 2;
+  }
   /* home page bottom title opt */
   .bottom-title {
     width: 95%;
