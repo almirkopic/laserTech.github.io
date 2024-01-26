@@ -19,7 +19,7 @@ body {
   background-color: #fffefe;
   font-family: Poppins;
   font-size: 12px;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
   width: 100%;
 }
 
@@ -868,8 +868,14 @@ table img:hover {
   }
   /* SECTION--1*/
 
+  #section--1 {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0;
+  }
+
   .section_banner {
-    width: 100%;
+    width: 90%;
     margin-bottom: 1rem;
   }
   .product_delta {
@@ -880,13 +886,23 @@ table img:hover {
     flex-direction: column;
     gap: 0;
   }
+
   .product_container_secondary {
-    width: 100%;
-    overflow: hidden;
-    height: auto;
-    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 99%;
+    max-width: 20rem;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    margin-top: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
-    margin-top: 1rem;
+  }
+  .product_container_secondary h2 {
+    font-size: 1.3rem !important;
   }
 
   .container-product img {
@@ -936,7 +952,7 @@ table img:hover {
   .features__header {
     font-size: 1.1rem;
   }
-  /*//////////////////////////////
+  /* section 2 end///////
 
 
   /**********/
@@ -945,9 +961,13 @@ table img:hover {
     gap: 2rem;
     margin: auto;
   }
+
+  .custom-style {
+    padding: 15px !important;
+  }
 }
 
-/* Responsive adjustment for smaller screens */
+/* Responsive TOP CAROUSEL LIDER */
 @media screen and (max-width: 900px) {
   .thumbnail .item {
     display: none;
@@ -1022,10 +1042,11 @@ table img:hover {
   /*////////*/
   html,
   body {
+    position: relative;
     height: 100%;
     margin: 0;
     padding: 0;
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
   }
 
   * {
@@ -1108,7 +1129,7 @@ table img:hover {
     margin-bottom: 1rem;
   }
 
-  /* custom middle banner*/ /* section2 */
+  /* custom middle banner*/ /* section3 */
   #section--3 {
     width: 100% !important;
     margin: auto;
@@ -1116,9 +1137,7 @@ table img:hover {
     display: flex;
     flex-direction: column;
   }
-  .custom-style {
-    padding: 15px !important;
-  }
+
   .section_title {
     padding: 1rem;
   }
