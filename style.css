@@ -79,9 +79,8 @@ header {
   position: absolute;
   right: 2rem;
   top: 60px;
-  background: #bdbcbcb2;
+  background: #e9e7e7b2;
   backdrop-filter: blur(30px);
-  backdrop-filter: blur(10px);
   overflow: hidden;
   transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   display: none;
@@ -582,6 +581,7 @@ table {
   margin-left: auto;
   margin-bottom: 5rem;
   display: flex;
+  justify-content: center;
 }
 
 th,
@@ -815,7 +815,7 @@ table img:hover {
   }
   .toggle_btn_img {
     height: 28px;
-    width: 32px;
+    width: 35px;
     display: block;
     z-index: 200;
     margin: 0;
@@ -960,12 +960,31 @@ table img:hover {
   }
   /* section 2 end///////
 
-
   /**********/
   .service_guide {
     flex-direction: column;
     gap: 2rem;
     margin: auto;
+  }
+
+  /* footer NAV */
+
+  .footer__nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 0;
+  }
+  .footer__item {
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: 0 0;
+    border: 0;
+    padding: 0;
+    margin-top: 1.5rem;
   }
 
   .custom-style {
@@ -1109,6 +1128,7 @@ table img:hover {
     margin: 0.2rem;
     font-size: 1rem;
     text-decoration: none;
+    text-align: center;
   }
   /* buttons homepage */
   .carousel .list .item .buttons {
@@ -1163,25 +1183,12 @@ table img:hover {
     font-size: 0.7rem;
     font-weight: 400;
   }
+
   .section--sign-up {
     margin: 0;
     padding: 6rem 0;
-  }
-  .footer__nav {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    padding: 0;
-  }
-  .footer__item {
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    margin: 0 0;
     border: 0;
-    padding: 0;
-    margin-top: 1.5rem;
   }
 }
+
+/*wrapper */
