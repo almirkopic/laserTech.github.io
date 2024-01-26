@@ -1,3 +1,21 @@
+// refresh unload
+window.addEventListener("beforeunload", function () {
+  sessionStorage.setItem("scrollPosition", window.scrollY);
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const storedScrollPosition = sessionStorage.getItem("scrollPosition");
+
+  if (storedScrollPosition) {
+    window.scrollTo(0, parseInt(storedScrollPosition));
+  } else {
+    
+    window.scrollTo(0, 0);
+  }
+});
+
+
 // Slider
 let nextDom = document.getElementById("next");
 let prevDom = document.getElementById("prev");
@@ -205,11 +223,6 @@ const headerObserver = new IntersectionObserver(stickyNav, {
 
 headerObserver.observe(header);
 
-/////////refresh
-
-window.onbeforeunload = function () {
-  window.scrollTo(0, 0);
-};
 
 //smooth scrol lto section one
 
