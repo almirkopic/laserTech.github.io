@@ -79,8 +79,7 @@ header {
   position: absolute;
   right: 2rem;
   top: 60px;
-  background: #e9e7e7b2;
-  backdrop-filter: blur(30px);
+  background: #f7f1f1;
   overflow: hidden;
   transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   display: none;
@@ -216,32 +215,23 @@ header {
   font-weight: 300;
 }
 
-/* arrows */
+/*  carousel arrows */
+
 .arrows {
   position: absolute;
-  top: 80%;
-  right: 52%;
+  top: 43%;
   z-index: 100;
-  width: 300px;
-  max-width: 30%;
   display: flex;
-  gap: 10px;
-  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
+
 .arrows button {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #eee4;
   border: none;
-  color: #fff;
-  font-family: monospace;
-  font-weight: bold;
-  transition: 0.5s;
-}
-.arrows button:hover {
-  background-color: #fff;
-  color: #444343;
+  background-color: transparent;
+  color: #b3b6b89a;
+  padding: 2rem;
+  font-size: 1.1rem;
 }
 
 /* animation need to work on it still */
@@ -690,6 +680,77 @@ table img:hover {
   height: 30px;
 }
 
+/*wrapper */
+
+.slider-wrapper {
+  position: relative;
+  max-width: 40rem;
+  height: 26.625rem;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slide-wrap {
+  position: absolute;
+  top: 10rem;
+  width: 100%;
+  height: 26.625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 1s;
+}
+
+.slide-wrap > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.btn-slide {
+  position: absolute;
+  top: 70%;
+  z-index: 10;
+  height: 5.5rem;
+  width: 5.5rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.backward {
+  left: 3rem;
+  transform: translate(-80%, -50%);
+  color: #a1a1a186;
+}
+
+.forward {
+  right: 3rem;
+  transform: translate(80%, -50%);
+  color: #a1a1a186;
+}
+
+.dots-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 1rem;
+}
+
+.dot {
+  width: 25px;
+  height: 5px;
+  margin: 0 5px;
+  border-radius: 0.5rem;
+  background: rgba(39, 39, 39, 0.5);
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #272727;
+}
+
 /*********** Service Guide*/
 
 .service_guide {
@@ -865,7 +926,12 @@ table img:hover {
     border-radius: 8px;
   }
   .arrows {
-    display: none !important; /* arr hide */
+    position: absolute;
+    top: 75%;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
   }
 
   .slider-container {
@@ -1191,4 +1257,4 @@ table img:hover {
   }
 }
 
-/*wrapper */
+
