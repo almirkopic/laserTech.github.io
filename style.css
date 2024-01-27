@@ -680,77 +680,6 @@ table img:hover {
   height: 30px;
 }
 
-/*wrapper */
-
-.slider-wrapper {
-  position: relative;
-  max-width: 40rem;
-  height: 26.625rem;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-.slide-wrap {
-  position: absolute;
-  top: 10rem;
-  width: 100%;
-  height: 26.625rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 1s;
-}
-
-.slide-wrap > img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.btn-slide {
-  position: absolute;
-  top: 70%;
-  z-index: 10;
-  height: 5.5rem;
-  width: 5.5rem;
-  cursor: pointer;
-  background: none;
-  border: none;
-}
-
-.backward {
-  left: 3rem;
-  transform: translate(-80%, -50%);
-  color: #a1a1a186;
-}
-
-.forward {
-  right: 3rem;
-  transform: translate(80%, -50%);
-  color: #a1a1a186;
-}
-
-.dots-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  margin-top: 1rem;
-}
-
-.dot {
-  width: 25px;
-  height: 5px;
-  margin: 0 5px;
-  border-radius: 0.5rem;
-  background: rgba(39, 39, 39, 0.5);
-  cursor: pointer;
-}
-
-.dot.active {
-  background: #272727;
-}
-
 /*********** Service Guide*/
 
 .service_guide {
@@ -927,11 +856,19 @@ table img:hover {
   }
   .arrows {
     position: absolute;
-    top: 75%;
+    top: 80%;
     z-index: 100;
     display: flex;
     justify-content: space-between;
     width: 100%;
+  }
+
+  .arrows button {
+    border: none;
+    background-color: transparent;
+    color: #b3b6b871;
+    padding: 0.3rem !important;
+    font-size: 0.8rem;
   }
 
   .slider-container {
@@ -1257,4 +1194,73 @@ table img:hover {
   }
 }
 
+/*wrapper */
 
+.slider-wrapper {
+  position: relative;
+  max-width: 40rem;
+  height: 26.625rem;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slide-wrap {
+  position: absolute;
+  top: 10rem;
+  width: 100%;
+  height: 26.625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 1s;
+}
+
+.slide-wrap > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.btn-slide {
+  position: absolute;
+  top: 70%;
+  z-index: 10;
+  height: 5.5rem;
+  width: 5.5rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.backward {
+  left: 3rem;
+  transform: translate(-80%, -50%);
+  color: #a1a1a186;
+}
+
+.forward {
+  right: 3rem;
+  transform: translate(80%, -50%);
+  color: #a1a1a186;
+}
+
+.dots-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 1rem;
+}
+
+.dot {
+  width: 25px;
+  height: 5px;
+  margin: 0 5px;
+  border-radius: 0.5rem;
+  background: rgba(39, 39, 39, 0.5);
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #272727;
+}
