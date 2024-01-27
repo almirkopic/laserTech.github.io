@@ -1,20 +1,4 @@
 // refresh unload
-window.addEventListener("beforeunload", function () {
-  sessionStorage.setItem("scrollPosition", window.scrollY);
-});
-
-
-document.addEventListener("DOMContentLoaded", function () {
-  const storedScrollPosition = sessionStorage.getItem("scrollPosition");
-
-  if (storedScrollPosition) {
-    window.scrollTo(0, parseInt(storedScrollPosition));
-  } else {
-    
-    window.scrollTo(0, 0);
-  }
-});
-
 
 // Slider
 let nextDom = document.getElementById("next");
@@ -109,6 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
   setInterval(nextSlide, 2000); // need bug fix
 });
 
+// Toggle nav
 // Toggle nav
 const toggleBtn = document.querySelector(".toggle_btn");
 const dropDownMenu = document.querySelector(".dropdown_menu");
@@ -223,7 +208,6 @@ const headerObserver = new IntersectionObserver(stickyNav, {
 
 headerObserver.observe(header);
 
-
 //smooth scrol lto section one
 
 function scrollToSection(sectionId) {
@@ -239,3 +223,58 @@ function scrollToSection(sectionId) {
     });
   }
 }
+
+//////////////let sliderImages = document.querySelectorAll(".slide"),
+function Slider1() {
+  let carouselSlides = document.querySelectorAll(".slide-wrap");
+  let btnBack = document.querySelector(".backward");
+  let btnForward = document.querySelector(".forward");
+  let dotsContainer = document.querySelector(".dots-container");
+  let currentSlide = 0;
+
+  const activeDot = function (slide) {
+    document
+      .querySelectorAll(".dot")
+      .forEach((dot) => dot.classList.remove("active"));
+    document
+      .querySelector(`.dot[data-slide="${slide}"]`)
+      .classList.add("active");
+  };
+  activeDot(currentSlide);
+
+  const changeSlide = function (slide) {
+    carouselSlides.forEach(
+      (slide, index) =>
+        (slide.style.transform = `translateX(${100 * (index - currentSlide)}%)`)
+    );
+  };
+  changeSlide(currentSlide);
+
+  btnForward.addEventListener("click", function () {
+    currentSlide++;
+    if (currentSlide > carouselSlides.length - 1) {
+      currentSlide = 0;
+    }
+    changeSlide(currentSlide);
+    activeDot(currentSlide);
+  });
+
+  btnBack.addEventListener("click", function () {
+    currentSlide--;
+    if (currentSlide < 0) {
+      currentSlide = carouselSlides.length - 1;
+    }
+    changeSlide(currentSlide);
+    activeDot(currentSlide);
+  });
+
+  dotsContainer.addEventListener("click", function (e) {
+    if (e.target.classList.contains("dot")) {
+      const slide = e.target.dataset.slide;
+      changeSlide(slide);
+      activeDot(slide);
+    }
+  });
+}
+
+Slider1();
