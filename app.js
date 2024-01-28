@@ -3,14 +3,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const toggleBtn = document.querySelector(".toggle_btn");
   const dropDownMenu = document.querySelector(".dropdown_menu");
 
-  toggleBtn.onclick = function () {
+  toggleBtn.addEventListener("click", function () {
     dropDownMenu.classList.toggle("open");
-  };
+  });
 
   window.addEventListener("resize", function () {
     dropDownMenu.classList.remove("open");
   });
-
+});
 
 // Slider top carousel
 let nextDom = document.getElementById("next");
