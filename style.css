@@ -396,6 +396,11 @@ header {
   transition: transform 1s, opacity 1s;
 }
 
+.section-custom {
+  padding: 5rem 3rem;
+  border-top: 1px solid #ddd;
+}
+
 .section--hidden {
   opacity: 0;
   transform: translateY(8rem); /* work for mobile phones*/
@@ -1198,7 +1203,7 @@ table img:hover {
 
 .slider-wrapper {
   position: relative;
-  max-width: 40rem;
+  max-width: 60rem;
   height: 26.625rem;
   margin: 0 auto;
   overflow: hidden;
