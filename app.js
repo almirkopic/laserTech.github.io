@@ -1,17 +1,3 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // Toggle nav
-  const toggleBtn = document.querySelector(".toggle_btn");
-  const dropDownMenu = document.querySelector(".dropdown_menu");
-
-  toggleBtn.addEventListener("click", function () {
-    dropDownMenu.classList.toggle("open");
-  });
-
-  window.addEventListener("resize", function () {
-    dropDownMenu.classList.remove("open");
-  });
-});
-
 // Slider top carousel
 let nextDom = document.getElementById("next");
 let prevDom = document.getElementById("prev");
@@ -102,13 +88,28 @@ document.addEventListener("DOMContentLoaded", function () {
     slider.style.transform = "translateX(" + translateValue + ")";
   }
 
-  setInterval(nextSlide, 2000);
+  setInterval(nextSlide, 2000); // need bug fix
+});
+
+// Toggle nav
+const toggleBtn = document.querySelector(".toggle_btn");
+const dropDownMenu = document.querySelector(".dropdown_menu");
+
+toggleBtn.onclick = function () {
+  dropDownMenu.classList.toggle("open");
+};
+
+// Event listener for window resize
+window.addEventListener("resize", function () {
+  // Remove the "open" class when the window is resized
+  dropDownMenu.classList.remove("open");
 });
 
 // Smooth scrolling NAV
 document.querySelector(".nav__links").addEventListener("click", function (e) {
   e.preventDefault();
 
+  // Matching strategy
   if (e.target.classList.contains("nav__link")) {
     const id = e.target.getAttribute("href");
     const targetSection = document.querySelector(id);
@@ -171,6 +172,7 @@ headerObserver.observe(carousel);
 function scrollToSection(sectionId) {
   const section = document.getElementById(sectionId);
   if (section) {
+    // Calculate the target scroll position, considering the title height
     const titleHeight = document.querySelector(".section__header").offsetHeight;
     const targetPosition = section.offsetTop - titleHeight;
 
@@ -228,11 +230,12 @@ function Slider1() {
   dotsContainer.addEventListener("click", function (e) {
     if (e.target.classList.contains("dot")) {
       const slide = e.target.dataset.slide;
-      currentSlide = parseInt(slide);
+      currentSlide = parseInt(slide); // Convert to integer
       changeSlide(currentSlide);
       activeDot(currentSlide);
     }
   });
 }
 
+// Call Slider1 function
 Slider1();
