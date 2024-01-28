@@ -1,6 +1,4 @@
-// refresh unload
-
-// Slider
+// Slider top carousel
 let nextDom = document.getElementById("next");
 let prevDom = document.getElementById("prev");
 
@@ -8,7 +6,6 @@ let carouselDom = document.querySelector(".carousel");
 let SliderDom = carouselDom.querySelector(".carousel .list");
 let thumbnailBorderDom = document.querySelector(".carousel .thumbnail");
 let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll(".item");
-let timeDom = document.querySelector(".carousel .time");
 
 thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
 let timeRunning = 1500;
@@ -21,6 +18,7 @@ nextDom.onclick = function () {
 prevDom.onclick = function () {
   showSlider("prev");
 };
+
 let runTimeOut;
 let runNextAuto = setTimeout(() => {
   next.click();
@@ -94,7 +92,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Toggle nav
-// Toggle nav
 const toggleBtn = document.querySelector(".toggle_btn");
 const dropDownMenu = document.querySelector(".dropdown_menu");
 
@@ -149,54 +146,17 @@ navbar.addEventListener("mouseover", handleHover.bind(0.5));
 navbar.addEventListener("mouseout", handleHover.bind(1));
 
 // Sticky nav
-const header = document.querySelector(".carousel");
-const navElement = document.querySelector(".nav");
-const navHeight = navElement.getBoundingClientRect().height;
-
-// Store scroll position before page refresh
-window.addEventListener("beforeunload", function () {
-  sessionStorage.setItem("scrollPosition", window.scrollY);
-});
-
-// Restore scroll position after page refresh
-document.addEventListener("DOMContentLoaded", function () {
-  const storedScrollPosition = sessionStorage.getItem("scrollPosition");
-
-  if (storedScrollPosition) {
-    window.scrollTo(0, parseInt(storedScrollPosition));
-  }
-});
-
-let prevScrollPos = parseInt(sessionStorage.getItem("scrollPosition")) || 0;
-let isNavHidden = false;
+const carousel = document.querySelector(".carousel");
+const nav = document.querySelector(".nav");
+const navHeight = nav.getBoundingClientRect().height;
 
 const stickyNav = function (entries) {
   const [entry] = entries;
-  const currentScrollPos = window.pageYOffset;
-
-  if (prevScrollPos < currentScrollPos) {
-    // Scrolling down
-    if (currentScrollPos > window.innerHeight && !isNavHidden) {
-      navElement.style.transform = "translateY(-100%)";
-      isNavHidden = true;
-    }
-  } else {
-    // Scrolling up
-    navElement.style.transform = "none";
-    isNavHidden = false;
-  }
-
-  if (currentScrollPos > (100 * window.innerHeight) / 100) {
-    navElement.style.transform = "translateY(-100%)";
-    isNavHidden = true;
-  }
-
-  prevScrollPos = currentScrollPos;
 
   if (!entry.isIntersecting) {
-    navElement.classList.add("sticky");
+    nav.classList.add("sticky");
   } else {
-    navElement.classList.remove("sticky");
+    nav.classList.remove("sticky");
   }
 };
 
@@ -206,10 +166,9 @@ const headerObserver = new IntersectionObserver(stickyNav, {
   rootMargin: `-${navHeight}px`,
 });
 
-headerObserver.observe(header);
+headerObserver.observe(carousel);
 
-//smooth scrol lto section one
-
+//Smooth scroll to section one
 function scrollToSection(sectionId) {
   const section = document.getElementById(sectionId);
   if (section) {
@@ -224,7 +183,7 @@ function scrollToSection(sectionId) {
   }
 }
 
-//////////////let sliderImages = document.querySelectorAll(".slide"),
+// Slider function
 function Slider1() {
   let carouselSlides = document.querySelectorAll(".slide-wrap");
   let btnBack = document.querySelector(".backward");
@@ -271,10 +230,12 @@ function Slider1() {
   dotsContainer.addEventListener("click", function (e) {
     if (e.target.classList.contains("dot")) {
       const slide = e.target.dataset.slide;
-      changeSlide(slide);
-      activeDot(slide);
+      currentSlide = parseInt(slide); // Convert to integer
+      changeSlide(currentSlide);
+      activeDot(currentSlide);
     }
   });
 }
 
+// Call Slider1 function
 Slider1();
