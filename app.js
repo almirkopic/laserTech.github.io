@@ -237,5 +237,16 @@ function Slider1() {
   });
 }
 
-// Call Slider1 function
 Slider1();
+
+/* social links */
+
+function redirectToFacebook() {
+  window.location.href = "https://www.facebook.com/Lasertechba";
+}
+function openOLXProfile() {
+  window.open("https://olx.ba/profil/LaserTech/aktivni", "_blank");
+}
+function openMsg() {
+  window.open("https://www.facebook.com/messages/t/102163625011627", "_blank");
+}
