@@ -95,14 +95,26 @@ document.addEventListener("DOMContentLoaded", function () {
 const toggleBtn = document.querySelector(".toggle_btn");
 const dropDownMenu = document.querySelector(".dropdown_menu");
 
-toggleBtn.onclick = function () {
+toggleBtn.onclick = function (event) {
+  event.stopPropagation(); 
   dropDownMenu.classList.toggle("open");
 };
 
-// Event listener for window resize
+
 window.addEventListener("resize", function () {
-  // Remove the "open" class when the window is resized
+ 
   dropDownMenu.classList.remove("open");
+});
+
+
+document.addEventListener("click", function (event) {
+  
+  if (
+    !dropDownMenu.contains(event.target) &&
+    !toggleBtn.contains(event.target)
+  ) {
+    dropDownMenu.classList.remove("open");
+  }
 });
 
 // Smooth scrolling NAV
