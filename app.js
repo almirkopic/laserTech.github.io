@@ -1,3 +1,5 @@
+"use strict";
+
 // Slider top carousel
 let nextDom = document.getElementById("next");
 let prevDom = document.getElementById("prev");
@@ -96,19 +98,15 @@ const toggleBtn = document.querySelector(".toggle_btn");
 const dropDownMenu = document.querySelector(".dropdown_menu");
 
 toggleBtn.onclick = function (event) {
-  event.stopPropagation(); 
+  event.stopPropagation();
   dropDownMenu.classList.toggle("open");
 };
 
-
 window.addEventListener("resize", function () {
- 
   dropDownMenu.classList.remove("open");
 });
 
-
 document.addEventListener("click", function (event) {
-  
   if (
     !dropDownMenu.contains(event.target) &&
     !toggleBtn.contains(event.target)
@@ -250,6 +248,24 @@ function Slider1() {
 }
 
 Slider1();
+
+/////side bar phone button//////
+
+document.addEventListener("DOMContentLoaded", function () {
+  var phoneItem = document.getElementById("phoneListItem");
+
+  phoneItem.addEventListener("click", function () {
+    // Toggle the 'active' class on phoneItem
+    phoneItem.classList.toggle("active");
+  });
+
+  document.addEventListener("click", function (event) {
+    // Close the popup if clicked outside the phonePopup or phoneItem
+    if (!phoneItem.contains(event.target)) {
+      phoneItem.classList.remove("active");
+    }
+  });
+});
 
 /* social links */
 
