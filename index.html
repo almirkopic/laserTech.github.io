@@ -48,15 +48,23 @@
         </li>
         
       
-        <li class="bar_item">
-          <a class="item_link">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 32 32" id="phone"><path d="M13.216 8.064c-.382-4.394-4.966-6.55-5.16-6.638a.974.974 0 0 0-.582-.078c-5.292.878-6.088 3.958-6.12 4.086a.99.99 0 0 0 .02.54c6.312 19.584 19.43 23.214 23.742 24.408.332.092.606.166.814.234a.99.99 0 0 0 .722-.042c.132-.06 3.248-1.528 4.01-6.316a.997.997 0 0 0-.096-.612c-.068-.132-1.698-3.234-6.218-4.33a.977.977 0 0 0-.884.21c-1.426 1.218-3.396 2.516-4.246 2.65-5.698-2.786-8.88-8.132-9-9.146-.07-.57 1.236-2.572 2.738-4.2a.998.998 0 0 0 .26-.766z"></path></svg>
+       
+        <li class="bar_item" id="phoneListItem">
+          <a class="item_li" id="phoneIcon">
+            <svg class="svg_phone" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32" id="phone"><path d="M13.216 8.064c-.382-4.394-4.966-6.55-5.16-6.638a.974.974 0 0 0-.582-.078c-5.292.878-6.088 3.958-6.12 4.086a.99.99 0 0 0 .02.54c6.312 19.584 19.43 23.214 23.742 24.408.332.092.606.166.814.234a.99.99 0 0 0 .722-.042c.132-.06 3.248-1.528 4.01-6.316a.997.997 0 0 0-.096-.612c-.068-.132-1.698-3.234-6.218-4.33a.977.977 0 0 0-.884.21c-1.426 1.218-3.396 2.516-4.246 2.65-5.698-2.786-8.88-8.132-9-9.146-.07-.57 1.236-2.572 2.738-4.2a.998.998 0 0 0 .26-.766z"></path></svg>
           </a>
+          <div class="phonePopup" id="phonePopup">
+            <h2 class="popup_contact">KONTANKT:</h2>
+            <h3 class="popup_title">Podrška korisnicima:</h3> 
+            <p> +387 12 34 56 </p> 
+            <h3 class="popup_title">EMAIL:</h3>
+            <p>info@lasertech.com</p>
+            </p>
+          </div>
         </li>
-        
-
-      </ul>
-   
+    
+    </div>
+      
     </div>
     <header class="header" id="home">
      
@@ -66,7 +74,7 @@
         </div>
         <ul class="links nav__links">
           <li class="nav__item" >
-            <a class="nav__link" href="#section--1">Ponuda</a>
+            <a class="nav__link" href="#section--1">Uređaji</a>
           </li>
           <li class="nav__item">
             <a class="nav__link" href="#section--2">Graviranje</a>
@@ -79,6 +87,9 @@
           </li>
           <li class="nav__item">
             <a class="nav__link" href="#section--5">Kontakt</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#section--45">Preporuke</a>
           </li>
         </ul>
         <div class="toggle_btn">
@@ -118,9 +129,10 @@
             <div class="topic">DELTA 22W</div>
             <div class="des">
               Algo laser sa nevjerovatnih 22w izlazne snage (144W ulazna snaga) !
-Predstavljamo vam NAJJAČI diodni laser na tržištu - sa 22W izlazne snage lasera! 
-Uz mašinu dolazi i integrisana pumpa zraka za perfektno čisto graviranje i sječenje kao i WiFi kontroler za upravljanje preko mobilnog telefona ili tableta.
-Radna površina je 400x400mm.
+              Predstavljamo vam NAJJAČI diodni laser na tržištu - sa 22W izlazne snage lasera! 
+              Uz mašinu dolazi i integrisana pumpa zraka za perfektno čisto graviranje i sječenje 
+              kao i WiFi kontroler za upravljanje preko mobilnog telefona ili tableta.
+              Radna površina je 400x400mm.
             </div>
             <div class="buttons">
               <button onclick="redirectToFacebook()">Naruči Online</button>
@@ -135,9 +147,12 @@ Radna površina je 400x400mm.
             <div class="title">AlgoLaser</div>
             <div class="topic">DIY 10W</div>
             <div class="des">
-Predstavljamo vam najnoviju verziju Algo CNC laserskih mašina!
-Ovaj put sa 10W izlazne snage lasera, radna površina od 400x400mm, sigurnosnim prekidačem i WiFi kontrolom za praktično upravljanje putem mobilnih uređaja. 
-Model ima opciju proširenja radne površine do impresivnih 850x400mm dodavanjem ekstenzije! Ove mašine su vrhunski alat za graviranje i sječenje bilo da ste početnik ili iskusni korisnik. Brze, precizne, i sada s dodatnom fleksibilnošću proširenja radne površine kao i jačine lasera. 
+              Predstavljamo vam najnoviju verziju Algo CNC laserskih mašina!
+              Ovaj put sa 10W izlazne snage lasera, radna površina od 400x400mm, 
+              sigurnosnim prekidačem i WiFi kontrolom za praktično upravljanje putem mobilnih
+              uređaja. Ove mašine su vrhunski alat za graviranje i sječenje bilo da ste početnik 
+              ili iskusni korisnik. Brze, precizne, i sada s dodatnom fleksibilnošću proširenja 
+              radne površine kao i jačine lasera. 
 
             </div>
             <div class="buttons">
@@ -366,7 +381,7 @@ Model ima opciju proširenja radne površine do impresivnih 850x400mm dodavanjem
             <th></th>
             <th>
               <a href="./deltalaser/index.html">
-              <img class="img_opt" src="img/image_1.jpg" alt="Image 2" />
+              <img class="img_opt" src="img/image_1.jpg" alt="Image 1" />
               </a>
               <p class="image-title">Algo Laser Delta 22W</p>
             </th>
@@ -378,13 +393,13 @@ Model ima opciju proširenja radne površine do impresivnih 850x400mm dodavanjem
             </th>
             <th>
               <a href="./diykit10/diykit10_index.html">
-                <img class="img_opt" src="img/image_3.jpg" alt="Image 2" />
+                <img class="img_opt" src="img/image_3.jpg" alt="Image 3" />
                 </a>
               <p class="image-title">Algo Laser DIY Kit 10W</p>
             </th>
             <th>
               <a href="./diykit5/diykit5_index.html">
-                <img class="img_opt" src="img/image_4.jpg" alt="Image 2" />
+                <img class="img_opt" src="img/image_4.jpg" alt="Image 4" />
                 </a>
               <p class="image-title">Algo Laser DIY Kit 5W</p>
             </th>
@@ -454,40 +469,18 @@ Model ima opciju proširenja radne površine do impresivnih 850x400mm dodavanjem
         </table>
       </div>
 
+
       <div class="custom-banner ">
         <div class="banner-content">
-          <h1>Kontaktirajte nas!</h1>
-          <p class="banner_description">
-            Rado bismo čuli od vas! Slobodno nas kontaktirajte za bilo kakve
-            upite ili prilike za suradnju. <br>
-            </p>
-          <p class="banner_description">Povežite se s nama na društvenim mrežama:</p>
-<div class="content_box">
-  <div class="primary_box">
-          <div class="existing-box">
-            <div><p>Pozovite nas za 24/7 podrsku: 062 222 333</p></div>
-            <div class="img_container"><a><img class="social_logo" style="width: 36px;" src="social/phone.svg"/></a></div>
-          </div>
-      
-          <div class="existing-box">
-            <div><p>Jedan klik i već ste u našem inboxu.</p></div>
-            <div class="img_container"><a><img class="social_logo" style="width: 36px;border-radius: 5px;" src="social/messenger.svg"/></a></div>
-          </div>
-  </div>
-
-  <div class="secondary_box">
-          <div class="existing-box">
-            <div><p>Jedan klik i već ste u našem inboxu.</p></div>
-            <div class="img_container"><a><img class="social_logo" style="width: 40px;" src="social/gmail.svg"/></a></div>
-          </div>
-      
-          <div class="existing-box">
-            <div><p>Jedan klik i već ste u našem inboxu.</p></div>
-            <div class="img_container"><a><img class="social_logo" style="width: 36px;" src="social/facebook.svg"/></a></div>
-          </div>
-        </div>
-</div>
-        
+         <div class="banner_title">
+          <h2>Trebate Pomoć?!</h2>
+          <p>Trebate pomoć pri odabiru uređaja? Obrati nam se u bilo kojem trenutku.<br>
+            Kontaktirajte nas putem dugmeta za chat ili pišite na info@lasertech.com.
+          </p>
+         </div>
+        <div>
+          <button class="banner_button" onclick="openMsg()">Kontaktirajte nas!</button>
+       </div>
         </div>
       </div>
 
@@ -525,36 +518,38 @@ Model ima opciju proširenja radne površine do impresivnih 850x400mm dodavanjem
       <div class="section__title sec_title custom-style">
         <h2 class="section__description">LaserTech.ba</h2>
         <h3 class="section__header">
-          Misljenje nasih klijenata
-        </h3>
+          Misljenje nasih klijenata</h3>
+        <div class="slider-wrapper">
+          <div class="slide-wrap">
+            <h3 class="title_test">Snježana Martinović Mirković</h3>
+            <img src="social/testimonial picture/profile1.jpg"/>
+            <p class="testimonial_container">
+              Odlične mašine, sve pohvale prezadovoljni smo! dobro ste rekli "male mašine velike, mogućnosti"!</p>
+            </div>
+            
+            <div class="slide-wrap">
+              <h3 class="title_test">Инани Мазина</h3>
+              <img src="social/testimonial picture/profile2.jpg"/>
+              <p class="testimonial_container">
+                Pored toga što je mašina sjajna, Vaša ljubaznost i spremnost za saradnju je za svaku pohvali. Hvala vam!
+              Iskrena preporuka, ko želi kvalitetne mašine za lasersko graviranje.</p>
+              </div>
 
-        <!-- <div class="testimonial_container"><img class="testimonial" src="img/test1.jpg" /></div> -->
+          <div class="slide-wrap">
+            <h3 class="title_test">Nafiza Muminović</h3>
+            <img src="social/testimonial picture/profile3.jpg"/>
+            <p class="testimonial_container">
+              Mašina je čudo jedno, prezadovoljna sam a još ni 10% nisam naučila i isprobala šta sve može. Topla preporuka za mašinu ali Bogme puno znači
+            i ljubaznost osoblja i to što u svakom trenutku rado objasne sve. Hvala još jednom. </p>
+            </div>
 
-        <!-- <div class="slider-wrapper">
           <div class="slide-wrap">
-            <img
-              src="testimonial/testim1.png"
-              alt="Photo1"
-            />
-          </div>
-          <div class="slide-wrap">
-            <img
-              src="testimonial/testim2.png"
-              alt="Photo3"
-            />
-          </div>
-          <div class="slide-wrap">
-            <img
-              src="testimonial/testim3.png"
-              alt="Photo2"
-            />
-          </div>
-          <div class="slide-wrap">
-            <img
-              src="testimonial/testim4.png"
-              alt="Photo3"
-            />
-          </div>
+            <h3 class="title_test">Adem Bilal</h3>
+            <img src="social/testimonial picture/profile4.jpg"/>
+            <p class="testimonial_container">
+              Laser Tech ubjedljivo najbolji!
+            Grancija, 24 h dostupna tehnička podrška i momci rado daju instrukcije kod svih nejasnoća. Sve preporuke!</p>
+            </div>
     
           <button class="btn-slide backward">
             <i class="fas fa-3x fa-chevron-circle-left"></i>
@@ -568,7 +563,7 @@ Model ima opciju proširenja radne površine do impresivnih 850x400mm dodavanjem
           <span class="dot" data-slide="1"></span>
           <span class="dot" data-slide="2"></span>
           <span class="dot" data-slide="3"></span>
-        </div> -->
+        </div>
        
       
     </section>
@@ -611,17 +606,27 @@ Model ima opciju proširenja radne površine do impresivnih 850x400mm dodavanjem
       <footer class="footer">
         <ul class="footer__nav">
           <li class="footer__item">
-            <a class="footer__link" href="#">O nama</a>
+            <a class="footer__link" href="#">Naslovna</a>
           </li>
           <li class="footer__item">
-            <a class="footer__link" href="#">Informacije</a>
+            <a class="footer__link" href="#section--1">Ponuda</a>
           </li>
           <li class="footer__item">
-            <a class="footer__link" href="#">Kontakt</a>
+            <a class="footer__link" href="#section--2">Graviranje</a>
+          </li>
+          <li class="footer__item">
+            <a class="footer__link" href="#section--3">Specifikacije</a>
+          </li>
+          <li class="footer__item">
+            <a class="footer__link" href="#section--4">Servis</a>
           </li>
           <li class="footer__item">
             <a class="footer__link" href="https://www.facebook.com/Lasertechba">Facebook</a>
           </li>
+          <li class="footer__item">
+            <a class="footer__link" href="https://www.facebook.com/messages/t/102163625011627">Messenger</a>
+          </li>
+         
           <li class="footer__item">
             <a class="footer__link" href="#">Priznanja</a>
           </li>
