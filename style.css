@@ -11,6 +11,10 @@ body {
   font-size: 12px;
   overflow-x: hidden;
   width: 100%;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 /* FIXED BUTTON*/
 #fixedButton {
@@ -54,9 +58,8 @@ body {
   bottom: -30%;
   right: -100px;
   width: 15rem;
-  height: 10rem;
-  background-color: #e6e3e3b7;
-  backdrop-filter: blur(10px);
+  height: auto;
+  background-color: #f1f1f1;
   border-radius: 5px;
   padding: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -1186,6 +1189,12 @@ table img:hover {
   }
   .banner_title h2 {
     font-size: 1.5rem;
+  }
+  /* POP UP PHONE BTN */
+
+  .phonePopup {
+    height: auto;
+    margin-right: -10px;
   }
 
   /* footer NAV */
