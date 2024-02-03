@@ -75,6 +75,8 @@ allSections.forEach(function (section) {
   section.classList.add("section--hidden");
 });
 
+//carousel home slider end
+
 // Banner slider
 document.addEventListener("DOMContentLoaded", function () {
   const slider = document.querySelector(".slider");
@@ -92,6 +94,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   setInterval(nextSlide, 2000); // need bug fix
 });
+
+//babber slider end
 
 // Toggle nav
 const toggleBtn = document.querySelector(".toggle_btn");
@@ -115,11 +119,12 @@ document.addEventListener("click", function (event) {
   }
 });
 
+//toggle naav end
+
 // Smooth scrolling NAV
 document.querySelector(".nav__links").addEventListener("click", function (e) {
   e.preventDefault();
 
-  // Matching strategy
   if (e.target.classList.contains("nav__link")) {
     const id = e.target.getAttribute("href");
     const targetSection = document.querySelector(id);
@@ -135,6 +140,7 @@ document.querySelector(".nav__links").addEventListener("click", function (e) {
     }
   }
 });
+//end smooth scrl
 
 // Menu fade animation
 const navbar = document.querySelector(".navbar");
@@ -154,6 +160,7 @@ const handleHover = function (e) {
 
 navbar.addEventListener("mouseover", handleHover.bind(0.5));
 navbar.addEventListener("mouseout", handleHover.bind(1));
+//end fade
 
 // Sticky nav
 const carousel = document.querySelector(".carousel");
@@ -178,6 +185,8 @@ const headerObserver = new IntersectionObserver(stickyNav, {
 
 headerObserver.observe(carousel);
 
+//end sticky NAV
+
 //Smooth scroll to section one
 function scrollToSection(sectionId) {
   const section = document.getElementById(sectionId);
@@ -192,6 +201,7 @@ function scrollToSection(sectionId) {
     });
   }
 }
+//end smooth scrolling
 
 // Slider function
 function Slider1() {
@@ -249,6 +259,8 @@ function Slider1() {
 
 Slider1();
 
+//end slider
+
 /////side bar phone button//////
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -266,6 +278,53 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+//end side-bar
+
+// Close modal
+
+document.addEventListener("DOMContentLoaded", function () {
+  const modal = document.getElementById("modal");
+  const modalContent = document.querySelector(".modal-content");
+  const closeBtn = document.getElementById("close-btn");
+
+  // ...open the modal
+  function openModal() {
+    modal.style.display = "flex";
+  }
+
+  // ...close the modal
+  function closeModal() {
+    modal.style.display = "none";
+  }
+
+  // click to open
+  document
+    .getElementById("footer_modal")
+    .addEventListener("click", function (e) {
+      e.preventDefault();
+      openModal();
+    });
+
+  // X btn
+  closeBtn.addEventListener("click", function () {
+    closeModal();
+  });
+
+  // esc e close
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      closeModal();
+    }
+  });
+
+  // anywhere to close
+  modal.addEventListener("click", function (e) {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+});
+//end modal
 
 /* social links */
 
