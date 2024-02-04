@@ -52,50 +52,26 @@ function showSlider(type) {
     next.click();
   }, timeAutoNext);
 }
-
-// Sections title animations
-const allSections = document.querySelectorAll(".section");
-
-const revealSection = function (entries, observer) {
-  const [entry] = entries;
-
-  if (!entry.isIntersecting) return;
-
-  entry.target.classList.remove("section--hidden");
-  observer.unobserve(entry.target);
-};
-
-const sectionObserver = new IntersectionObserver(revealSection, {
-  root: null,
-  threshold: 0.15,
-});
-
-allSections.forEach(function (section) {
-  sectionObserver.observe(section);
-  section.classList.add("section--hidden");
-});
-
 //carousel home slider end
 
-// Banner slider
+/////side bar phone button//////
+
 document.addEventListener("DOMContentLoaded", function () {
-  const slider = document.querySelector(".slider");
-  let currentIndex = 0;
+  var phoneItem = document.getElementById("phoneListItem");
 
-  function nextSlide() {
-    currentIndex = (currentIndex + 1) % 4;
-    updateSlider();
-  }
+  phoneItem.addEventListener("click", function () {
+    // Toggle the 'active' class on phoneItem
+    phoneItem.classList.toggle("active");
+  });
 
-  function updateSlider() {
-    const translateValue = -currentIndex * 25 + "%";
-    slider.style.transform = "translateX(" + translateValue + ")";
-  }
-
-  setInterval(nextSlide, 2000); // need bug fix
+  document.addEventListener("click", function (event) {
+    // Close the popup if clicked outside the phonePopup or phoneItem
+    if (!phoneItem.contains(event.target)) {
+      phoneItem.classList.remove("active");
+    }
+  });
 });
-
-//babber slider end
+//end side-bar
 
 // Toggle nav
 const toggleBtn = document.querySelector(".toggle_btn");
@@ -120,6 +96,29 @@ document.addEventListener("click", function (event) {
 });
 
 //toggle naav end
+
+// Sections title animations
+const allSections = document.querySelectorAll(".section");
+
+const revealSection = function (entries, observer) {
+  const [entry] = entries;
+
+  if (!entry.isIntersecting) return;
+
+  entry.target.classList.remove("section--hidden");
+  observer.unobserve(entry.target);
+};
+
+const sectionObserver = new IntersectionObserver(revealSection, {
+  root: null,
+  threshold: 0.15,
+});
+
+allSections.forEach(function (section) {
+  sectionObserver.observe(section);
+  section.classList.add("section--hidden");
+});
+// end
 
 // Smooth scrolling NAV
 document.querySelector(".nav__links").addEventListener("click", function (e) {
@@ -186,6 +185,26 @@ const headerObserver = new IntersectionObserver(stickyNav, {
 headerObserver.observe(carousel);
 
 //end sticky NAV
+
+// Banner slider
+document.addEventListener("DOMContentLoaded", function () {
+  const slider = document.querySelector(".slider");
+  let currentIndex = 0;
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % 4;
+    updateSlider();
+  }
+
+  function updateSlider() {
+    const translateValue = -currentIndex * 25 + "%";
+    slider.style.transform = "translateX(" + translateValue + ")";
+  }
+
+  setInterval(nextSlide, 2000); // need bug fix
+});
+
+//banner slider end
 
 //Smooth scroll to section one
 function scrollToSection(sectionId) {
@@ -261,25 +280,6 @@ Slider1();
 
 //end slider
 
-/////side bar phone button//////
-
-document.addEventListener("DOMContentLoaded", function () {
-  var phoneItem = document.getElementById("phoneListItem");
-
-  phoneItem.addEventListener("click", function () {
-    // Toggle the 'active' class on phoneItem
-    phoneItem.classList.toggle("active");
-  });
-
-  document.addEventListener("click", function (event) {
-    // Close the popup if clicked outside the phonePopup or phoneItem
-    if (!phoneItem.contains(event.target)) {
-      phoneItem.classList.remove("active");
-    }
-  });
-});
-//end side-bar
-
 // Close modal
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -325,35 +325,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 //end modal
-
-//LAZY IMGS
-
-const imgTargets = document.querySelectorAll("img[data-src]");
-
-const loadImg = function (entries, observer) {
-  const [entry] = entries;
-
-  if (!entry.isIntersecting) return;
-
-  // Replace src with data-src
-  entry.target.src = entry.target.dataset.src;
-
-  entry.target.addEventListener("load", function () {
-    entry.target.classList.remove("lazy-img");
-  });
-
-  observer.unobserve(entry.target);
-};
-
-const imgObserver = new IntersectionObserver(loadImg, {
-  root: null,
-  threshold: 0,
-  rootMargin: "200px",
-});
-
-imgTargets.forEach((img) => imgObserver.observe(img));
-
-
 
 /* social links */
 
