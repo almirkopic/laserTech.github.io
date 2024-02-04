@@ -134,7 +134,7 @@ navbar.addEventListener("mouseover", handleHover.bind(0.5));
 navbar.addEventListener("mouseout", handleHover.bind(1));
 //end fade
 
-//scorial
+//social
 function openOLXProfile() {
   window.open("https://olx.ba/profil/LaserTech/aktivni", "_blank");
 }
