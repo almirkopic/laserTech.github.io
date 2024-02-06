@@ -16,6 +16,9 @@ body {
   -webkit-user-select: none;
   -ms-user-select: none;
 }
+
+/*/////////
+
 /* FIXED BUTTON*/
 #fixedButton {
   position: fixed;
@@ -77,6 +80,7 @@ body {
 .bar_item.active .svg_phone path {
   fill: #01c597;
 }
+
 .popup_contact {
   font-size: 0.9rem;
   display: flex;
@@ -178,12 +182,20 @@ header {
   overflow: hidden;
   position: relative;
 }
+#prev {
+  cursor: pointer;
+}
+#next {
+  cursor: pointer;
+}
 .carousel .list .item {
   width: 100%;
   height: 100%;
   position: absolute;
   inset: 0 0 0 0;
 }
+
+.carousel .list .item picture,
 .carousel .list .item img {
   width: 100%;
   height: 100%;
@@ -228,21 +240,13 @@ header {
 }
 .carousel .list .item .buttons {
   display: grid;
-  grid-template-columns: repeat(2, 130px);
+  grid-template-columns: repeat(2, 180px);
   grid-template-rows: 40px;
   gap: 5px;
   margin-top: 20px;
 }
+
 .carousel .list .item .buttons button {
-  border: none;
-  background-color: #eee;
-  letter-spacing: 3px;
-  font-family: Poppins;
-  font-weight: 500;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.carousel .list .item .buttons button:nth-child(2) {
   background: rgba(8, 8, 8, 0.548);
   border: 1px solid #01c597;
   color: #0cd1a3;
@@ -343,6 +347,7 @@ header {
   animation-delay: 1.8s !important;
 }
 /* animation when next click */
+.carousel.next .list .item:nth-child(1) picture,
 .carousel.next .list .item:nth-child(1) img {
   width: 150px;
   height: 220px;
@@ -352,6 +357,7 @@ header {
   border-radius: 30px;
   animation: showImage 0.5s linear 1 forwards;
 }
+
 @keyframes showImage {
   to {
     bottom: 0;
@@ -366,7 +372,7 @@ header {
   overflow: hidden;
   animation: showThumbnail 0.5s linear 1 forwards;
 }
-.carousel.prev .list .item img {
+.carousel.prev .list .item picture {
   z-index: 100;
 }
 @keyframes showThumbnail {
@@ -1184,10 +1190,6 @@ table img:hover {
     align-items: center;
     text-align: center;
   }
-  .features_video video {
-    width: 100%;
-    height: auto;
-  }
 
   .grow-order-2 {
     order: 1;
@@ -1417,7 +1419,7 @@ table img:hover {
     font-size: 1rem;
     font-weight: 300;
     height: 3rem;
-    width: auto;
+    width: 12rem;
     cursor: pointer;
   }
 
@@ -1431,6 +1433,20 @@ table img:hover {
     margin: 0;
     margin-bottom: 1rem;
   }
+  /* Youtube video*/
+
+  .features_video {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .youtube-container iframe {
+    width: 100%;
+    height: 18rem;
+    border: 0;
+  }
+
+  /* end */
 
   /* custom middle banner*/ /* section3 */
   #section--3 {
