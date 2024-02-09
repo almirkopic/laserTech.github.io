@@ -2,13 +2,15 @@
 // Slider top carousel
 // Slider
 const slider = function () {
-  const slides = document.querySelectorAll(".home-slide"); // Change from ".slide" to ".home-slide"
-  const btnLeft = document.querySelector(".prev"); // Change from ".slider__btn--left" to ".prev"
-  const btnRight = document.querySelector(".next"); // Change from ".slider__btn--right" to ".next"
+  const slides = document.querySelectorAll(".home-slide");
+  const btnLeft = document.querySelector(".prev");
+  const btnRight = document.querySelector(".next");
   const dotContainer = document.querySelector(".dots");
 
   let curSlide = 0;
   const maxSlide = slides.length;
+  let autoSlideInterval;
+  let autoplayEnabled = true;
 
   // Functions
   const createDots = function () {
@@ -58,21 +60,43 @@ const slider = function () {
     activateDot(curSlide);
   };
 
-  const init = function () {
-    goToSlide(0);
-    createDots();
-
-    activateDot(0);
+  const startAutoSlide = function () {
+    autoSlideInterval = setInterval(nextSlide, 3000);
   };
-  init();
+
+  const stopAutoSlide = function () {
+    clearInterval(autoSlideInterval);
+  };
+
+  const toggleAutoplay = function () {
+    autoplayEnabled = !autoplayEnabled;
+    if (autoplayEnabled) {
+      startAutoSlide();
+    } else {
+      stopAutoSlide();
+    }
+  };
 
   // Event handlers
-  btnRight.addEventListener("click", nextSlide);
-  btnLeft.addEventListener("click", prevSlide);
+  btnRight.addEventListener("click", function () {
+    nextSlide();
+    toggleAutoplay();
+  });
+
+  btnLeft.addEventListener("click", function () {
+    prevSlide();
+    toggleAutoplay();
+  });
 
   document.addEventListener("keydown", function (e) {
-    if (e.key === "ArrowLeft") prevSlide();
-    e.key === "ArrowRight" && nextSlide();
+    if (e.key === "ArrowLeft") {
+      prevSlide();
+      toggleAutoplay();
+    }
+    if (e.key === "ArrowRight") {
+      nextSlide();
+      toggleAutoplay();
+    }
   });
 
   dotContainer.addEventListener("click", function (e) {
@@ -80,9 +104,20 @@ const slider = function () {
       const { slide } = e.target.dataset;
       goToSlide(slide);
       activateDot(slide);
+      toggleAutoplay();
     }
   });
+
+  // Initialize slider
+  const init = function () {
+    goToSlide(0);
+    createDots();
+    activateDot(0);
+    startAutoSlide();
+  };
+  init();
 };
+
 slider();
 
 //carousel home slider end
