@@ -1215,7 +1215,7 @@ table img:hover {
   }
   .dots__dot {
     height: 10px;
-    /* width: 1px; */
+    width: 10px; 
   }
   .button {
     background-color: #000000;
