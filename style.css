@@ -245,9 +245,9 @@ header {
   border: none;
   background-color: #b9b9b9;
   opacity: 0.7;
-  height: 0.5rem;
-  width: 0.5rem;
-  border-radius: 50%;
+  height: 0.3rem;
+  width: 1.2rem;
+  border-radius: 20%;
   margin-right: 1.75rem;
   cursor: pointer;
   transition: all 0.5s;
