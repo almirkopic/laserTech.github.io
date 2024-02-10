@@ -12,6 +12,9 @@ const slider = function () {
   let autoSlideInterval;
   let autoplayEnabled = true;
 
+  let touchStartX = 0;
+  let touchEndX = 0;
+
   // Functions
   const createDots = function () {
     slides.forEach(function (_, i) {
@@ -61,7 +64,7 @@ const slider = function () {
   };
 
   const startAutoSlide = function () {
-    autoSlideInterval = setInterval(nextSlide, 3000);
+    autoSlideInterval = setInterval(nextSlide, 4500);
   };
 
   const stopAutoSlide = function () {
@@ -108,6 +111,26 @@ const slider = function () {
     }
   });
 
+  // Touch event listeners
+  document.addEventListener("touchstart", function (e) {
+    touchStartX = e.touches[0].clientX;
+  });
+
+  document.addEventListener("touchmove", function (e) {
+    touchEndX = e.touches[0].clientX;
+  });
+
+  document.addEventListener("touchend", function () {
+    const touchDiff = touchEndX - touchStartX;
+    if (touchDiff > 0) {
+      prevSlide();
+      toggleAutoplay();
+    } else if (touchDiff < 0) {
+      nextSlide();
+      toggleAutoplay();
+    }
+  });
+
   // Initialize slider
   const init = function () {
     goToSlide(0);
@@ -119,7 +142,6 @@ const slider = function () {
 };
 
 slider();
-
 //carousel home slider end
 
 // Banner slider
