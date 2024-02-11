@@ -1268,4 +1268,9 @@ table img:hover {
   .product_delta h2 {
     font-size: 1.3rem !important;
   }
+  /*banner slider opt */
+
+  .slider-container {
+    height: 13.5rem;
+  }
 }
