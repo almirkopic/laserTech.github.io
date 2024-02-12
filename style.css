@@ -1235,7 +1235,7 @@ table img:hover {
   }
   .des {
     margin-top: 1rem;
-    backdrop-filter: blur(2px) contrast(60%);
+    backdrop-filter: blur(2px) contrast(30%);
   }
   .content {
     width: 100%;
