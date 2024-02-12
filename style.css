@@ -1274,8 +1274,11 @@ table img:hover {
     width: 100%;
     padding: 1rem;
   }
-
-  /* Youtube video*/
+    .social_i {
+    height: 35px;
+    width: 35px;
+  }
+/* Youtube video*/
 
   .features_video {
     width: 100%;
