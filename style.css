@@ -1233,9 +1233,10 @@ table img:hover {
   .topic {
     font-size: 2rem;
   }
-  .des {
+ .des {
     margin-top: 1rem;
     backdrop-filter: blur(2px) contrast(30%);
+    background-color: #0000006e;
   }
   .content {
     width: 100%;
