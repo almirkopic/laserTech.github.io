@@ -1235,6 +1235,7 @@ table img:hover {
   }
   .des {
     margin-top: 1rem;
+    backdrop-filter: blur(2px) contrast(60%);
   }
   .content {
     width: 100%;
@@ -1274,11 +1275,11 @@ table img:hover {
     width: 100%;
     padding: 1rem;
   }
-    .social_i {
+  .social_i {
     height: 35px;
     width: 35px;
   }
-/* Youtube video*/
+  /* Youtube video*/
 
   .features_video {
     width: 100%;
