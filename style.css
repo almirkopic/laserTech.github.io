@@ -1266,6 +1266,15 @@ table img:hover {
     padding-bottom: 2rem;
     border-bottom: 1px solid rgb(241, 241, 241);
   }
+  /* social btns*/
+
+  .socialbtns {
+    height: 1rem;
+    flex-direction: row;
+    width: 100%;
+    padding: 1rem;
+  }
+
   /* Youtube video*/
 
   .features_video {
