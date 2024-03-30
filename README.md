@@ -24,7 +24,7 @@ To get started with LaserTech, visit our website [here]([https://www.lasertech.c
 
 ## Contact Us
 
-Have questions or need assistance? Feel free to reach out to us at [info@lasertech.com](mailto:info@lasertech.com) or via our [contact page](https://www.lasertech.com/contact).
+Have questions or need assistance? Feel free to reach out to us at [info@lasertech.com](mailto:info@lasertech.com).
 
 ## Testimonials
 
