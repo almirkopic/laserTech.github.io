@@ -20,7 +20,7 @@ LaserTech offers a range of cutting-edge laser devices designed to meet your div
 
 ## Getting Started
 
-To get started with LaserTech, visit our website [here](https://www.lasertech.com) to explore our range of products and services.
+To get started with LaserTech, visit our website [here]([https://www.lasertech.com](https://almirkopic.github.io/laserTech.github.io/#home)) to explore our range of products and services.
 
 ## Contact Us
 
